@@ -31,12 +31,12 @@ public class Arc extends Circle {
 		this.sweep = sweep;
 	}
 	
-	void draw() {
+	public void draw() {
 		
 		System.out.println("Draw arc");
 	}
 
-	void resize() {
+	public void resize() {
 	
 		System.out.println("Resize arc");
 	}

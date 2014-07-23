@@ -50,16 +50,16 @@ public class Quadrangle extends Figure {
 		this.d = d;
 	}
 	
-	void draw() {
+	public void draw() {
 		
 		System.out.println("Draw Quadrangle");
 	}
 
-	void resize() {
+	public void resize() {
 	
 		System.out.println("Resize Quadrangle");
 	}
-	void findSurface()
+	public void findSurface()
 	{
 		
 	}

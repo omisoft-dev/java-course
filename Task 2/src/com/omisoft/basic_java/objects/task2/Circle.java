@@ -31,12 +31,12 @@ public class Circle extends Point {
 		this.height = height;
 	}
 	
-	void draw() {
+	public void draw() {
 		
 		System.out.println("Draw circle");
 	}
 
-	void resize() {
+	public void resize() {
 	
 		System.out.println("Resize circle");
 	}

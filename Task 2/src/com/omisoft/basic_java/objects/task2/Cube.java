@@ -11,12 +11,12 @@ public class Cube extends Parallelogram {
 		// TODO Auto-generated constructor stub
 	}
 	
-	void draw() {
+	public void draw() {
 		
 		System.out.println("Draw Cube");
 	}
 
-	void resize() {
+	public void resize() {
 	
 		System.out.println("Resize Cube");
 	}

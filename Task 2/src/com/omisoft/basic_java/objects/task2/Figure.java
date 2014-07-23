@@ -5,7 +5,7 @@ package com.omisoft.basic_java.objects.task2;
  *
  */
 public abstract class Figure {
-	abstract void draw();
-    abstract void resize();
-    abstract void findSurface();
+	public abstract void draw();
+    public abstract void resize();
+    public abstract void findSurface();
 }

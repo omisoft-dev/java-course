@@ -50,7 +50,7 @@ public class Point extends Figure {
 	/**
 	 * Prints Draw point text
 	 */
-	void draw() {
+	public void draw() {
 		
 		System.out.println("Draw point");
 	}
@@ -58,14 +58,14 @@ public class Point extends Figure {
 	/**
 	 * Resize
 	 */
-	void resize() {
+	public void resize() {
 	
 		System.out.println("Resize point");
 	}
 	/**
 	 * Empty function
 	 */
-	void findSurface()
+	public void findSurface()
 	{
 		
 	}

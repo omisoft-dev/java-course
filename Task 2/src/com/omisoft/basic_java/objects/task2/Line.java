@@ -28,13 +28,13 @@ public class Line extends Point {
 		this.y0 = y0;
 	}
 	
-	void draw() {
+	public void draw() {
 		
 		System.out.println("Draw line");
 	}
 
 
-	void resize() {
+	public void resize() {
 	
 		System.out.println("Resize line");
 	}

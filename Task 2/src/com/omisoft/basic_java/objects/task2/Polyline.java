@@ -31,16 +31,16 @@ public class Polyline extends Quadrangle {
 		this.f = f;
 	}
 	
-void draw() {
+public void draw() {
 		
 		System.out.println("Draw Polyline");
 	}
 
-	void resize() {
+	public void resize() {
 	
 		System.out.println("Resize Polyline");
 	}
-	void findSurface()
+	public void findSurface()
 	{
 		
 	}

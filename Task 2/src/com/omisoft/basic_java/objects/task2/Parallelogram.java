@@ -23,12 +23,12 @@ public class Parallelogram extends Quadrangle {
 		this.position = position;
 	}
 	
-	void draw() {
+	public void draw() {
 		
 		System.out.println("Draw Parallelogram");
 	}
 
-	void resize() {
+	public void resize() {
 	
 		System.out.println("Resize Parallelogram");
 	}
