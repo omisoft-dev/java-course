@@ -49,6 +49,8 @@ public class Sum {
 		long result = a+b;
 		System.out.println("Long result = " + result);
 	}
+	
+
 	/**
 	 * Sums two strings
 	 * @param a
