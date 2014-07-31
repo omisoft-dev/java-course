@@ -1,20 +1,46 @@
 package com.omisoft.basic_java.exceptions.task3;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
 
 
 public class ListOfElements {
 
 	private ArrayList<Object> arr = new ArrayList<Object>();
 
+	/**
+	 * Checks if the array list is empty
+	 * @return - null
+	 */
+	private boolean isEmpty() 
+	{
+        return arr == null;
+	}
+
+	/**
+	 * Checks if the list is full
+	 * @return
+	 */
+	public boolean notFull() 
+	{
+         if ( isEmpty() )
+         {
+        	 return true;
+         }
+         else if (arr.size()<5)
+         {
+        	 return true;
+         }
+         else
+         {
+        	 return false;
+         }
+	}
 	
 	/**
-	 * Removes the last element of the StringBuilder
+	 * Removes the last element of the array list
 	 * @throws AlreadyEmptyException
 	 */
-	public void remove() throws AlreadyEmptyException
+	public Object remove() throws AlreadyEmptyException
 	{
 		if(arr.size() == 0)
 		{
@@ -22,48 +48,37 @@ public class ListOfElements {
 		}
 		else
 		{
-			int a = arr.size();
-			arr.remove(a);		
+			String a = (String) arr.get(arr.size() -1);
+			arr.remove(a);
+			
 		}
+		return arr;
 		
 	}
 	
 	/**
-	 * Adds 5 elements to the StringBuilder
+	 * Adds 5 elements to the array list
 	 * @param obj - element from the keyboard
 	 */
-	public void add() throws AlreadyFullException
+	public void add(Object obj) throws AlreadyFullException
 	{
-		Scanner input = new Scanner(System.in);
-		String first = input.next();
-		String second = input.next();
-		String third = input.next();
-		String forth = input.next();
-		String fifth = input.next();
-		String sixth = input.next();
-	
-		arr.add(first);
-		arr.add(second);
-		arr.add(third);
-		arr.add(forth);
-		arr.add(fifth);
-		arr.add(sixth);
-			
-		if (arr.size() > 5)
+		
+		if (notFull())
+		{
+			arr.add(obj);
+		}	
+		else
 		{
 			throw new AlreadyFullException("List = "+arr);
 		}
-		
-		input.close();
-		
+	
 	}
 	/**
-	 * Prints all the elements of the StringBuilder
+	 * Prints all the elements of the array list
 	 */
 	public void printAllElements()
 	{
 		System.out.println(arr);
 	}
-
 
 }
