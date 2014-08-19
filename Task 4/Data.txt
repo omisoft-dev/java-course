@@ -1,0 +1,1 @@
+com.omisoft.basic_java.IO.task6.DataClass@62af9d74
