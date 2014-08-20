@@ -6,7 +6,7 @@ public class Test {
 	@SuppressWarnings("unused")
 	B obj = new B();
 	
-
+	//Git commit test
     }
 
 }
