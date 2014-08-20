@@ -5,6 +5,11 @@ package com.omisoft.basic_java.exceptions.task3;
  *
  */
 public class AlreadyEmptyException extends Exception {
+	/**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+
 	public AlreadyEmptyException(String message) {
         super(message);
     }

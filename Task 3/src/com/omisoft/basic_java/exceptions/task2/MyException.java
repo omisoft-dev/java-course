@@ -6,6 +6,11 @@ package com.omisoft.basic_java.exceptions.task2;
  */
 public class MyException extends Exception {
 	
+	/**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+
 	public MyException(String message) {
         super(message);
     }
