@@ -74,7 +74,7 @@ public class GUI implements ActionListener{
 	
 	
 	/**
-	 * Method creating a chooser for saving the file in a particular directory
+	 * Method creating a chooser for saving the file in a particular directory-
 	 * @param filename 
 	 * @param source
 	 */
