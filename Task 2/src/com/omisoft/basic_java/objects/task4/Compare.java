@@ -10,6 +10,7 @@ public class Compare {
 	 * @param y - second key
 	 * @return - massage if the two keys are equal or not
 	 */
+	@SuppressWarnings("unchecked")
 	protected <T> int compare(T x, T y) {
         int a = 0;
         /**
