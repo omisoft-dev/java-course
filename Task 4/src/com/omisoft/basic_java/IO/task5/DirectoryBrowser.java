@@ -16,7 +16,7 @@ public class DirectoryBrowser {
 			String[] list = browse.list();
 		
 			String output = "";
-		
+		if (browse.exists()){
 			if (browse.isFile()== true)
 			{
 				System.out.println("This is a file.");
@@ -30,6 +30,11 @@ public class DirectoryBrowser {
 				}
 				System.out.println(output);
 			}
+		}
+		else
+		{
+			System.out.println("This file does not exist!");
+		}
 		}
 		catch(NullPointerException e)
 		{

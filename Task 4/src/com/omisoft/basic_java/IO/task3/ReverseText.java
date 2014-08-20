@@ -14,22 +14,24 @@ public class ReverseText {
 	{
 		String fileName = "reverseText.txt";
 		Scanner fileReader = null;
+		PrintWriter fileWriter = null;
 		try
 		{
 			fileReader = new Scanner(new File(fileName));
 			System.out.println("File " + fileName + " opened.");
 			
-			String buf ;
+			StringBuffer buf=new StringBuffer();
 			while (fileReader.hasNextLine()) 
 			{
-				buf = fileReader.next();
-				System.out.println("File info: "+buf);
-				String reverse = new StringBuffer(buf).reverse().toString();
-				System.out.println("Reverse file info: "+reverse);
-				PrintWriter fileWriter = new PrintWriter(fileName);
-				fileWriter.print(reverse);
-				fileWriter.close();
+				
+				buf.append(fileReader.nextLine()+"\n");	
 			}
+			System.out.println("File info: "+buf);
+			fileWriter = new PrintWriter(fileName);
+			String reverse = buf.reverse().toString();
+			fileWriter.println(reverse);
+			System.out.println("Reverse file info: "+reverse);
+			
 		}
 		catch (FileNotFoundException fnf) 
 		{
@@ -44,6 +46,10 @@ public class ReverseText {
 			if (fileReader != null) 
 			{
 				fileReader.close();
+			}
+			if (fileWriter != null)
+			{
+				fileWriter.close();
 			}
 			System.out.println("File closed.");
 		}

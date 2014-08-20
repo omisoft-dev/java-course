@@ -7,14 +7,19 @@ import java.util.InputMismatchException;
 
 public class ReadFromConsole {
 	
-	private static BufferedReader input;
+	private static BufferedReader input = null;
+	
+	public ReadFromConsole()
+	{
+		input = new BufferedReader(new InputStreamReader(System.in));
+	}
+	
 	
 	/**
 	 * Reads string from the console
 	 */
 	public static void readString()
 	{
-		input = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter some string: ");
 		String readS;
 		try 
@@ -35,26 +40,25 @@ public class ReadFromConsole {
 	{
 		try
 		{
-			input = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("Enter an integer value: ");
 			int readI;
-			try 
-			{
-				readI = Integer.parseInt(input.readLine());
-				System.out.println(readI);
-			}
-			catch (IOException e) 
-			{
-				e.printStackTrace();
-			}
+			readI = Integer.parseInt(input.readLine());
+			System.out.println(readI);
+			
 		}
 		catch(NumberFormatException e)
 		{
 			System.out.println();
 			System.err.println("Wrong format!");
 			System.err.println("Please write an integer value.");
+			e.printStackTrace();
 			
 			readInt();
+		}
+		catch (IOException e) 
+		{
+			System.err.println("Input/output error!");
+			e.printStackTrace();
 		}
 	}
 	/**
@@ -62,8 +66,6 @@ public class ReadFromConsole {
 	 */
 	public static void readChar()
 	{
-
-		input = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter an char value: ");
 		char readC;
 		try 
@@ -82,7 +84,6 @@ public class ReadFromConsole {
 	 */
 	public static void readFloat()
 	{
-		input = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter an float value: ");
 		float readF;
 		try 
@@ -94,21 +95,24 @@ public class ReadFromConsole {
 		{
 			System.err.println("Wrong format!");
 			System.err.println("Please write an float value.");
+			e.printStackTrace();
 			readFloat();
 		} 
 		catch (IOException e) 
 		{
-
+			System.err.println("Input/output error!");
 			e.printStackTrace();
 		}
 	}
 	
 	public static void closeBuffer()
-	{
-		input = new BufferedReader(new InputStreamReader(System.in));
-		
-		try {
-			input.close();
+	{	
+		try 
+		{
+			if (input != null)
+			{
+				input.close();
+			}
 		}
 		catch (IOException e) 
 		{

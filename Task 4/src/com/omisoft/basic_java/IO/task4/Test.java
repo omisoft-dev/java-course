@@ -20,7 +20,7 @@ public class Test {
 
 		
 		TransferObject obj = new TransferObject(in,out);
-		System.out.println("Transfered bytes = "+obj.transfer(9, 8));
+		System.out.println("Transfered bytes = "+obj.transfer(10, 0));
 		}
 		catch(IOException e)
 		{
@@ -31,8 +31,14 @@ public class Test {
 			try 
 			{
 				out.flush();
-				in.close();
-				out.close();
+				if (in != null)
+				{
+					in.close();
+				}
+				if (out != null)
+				{
+					out.close();
+				}
 			} 
 			catch (IOException e)
 			{

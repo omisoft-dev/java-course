@@ -31,13 +31,22 @@ public class TransferObject {
 		try
 		{
 			byte[] buffer = new byte[1024];
+
 			
-			while ((numberOfBytes = in.read(buffer)) != -1)
+			if (buffer.length < a)
 			{
-				out.write(buffer, offset, a);
+				while ((numberOfBytes = in.read(buffer)) != -1)
+				{	
+					out.write(buffer, offset, a);
+					System.out.println("Streams transfered successfully.");
 				
-			}	
-			System.out.println("Streams transfered successfully.");
+				}	
+			}
+			else
+			{
+				System.out.println("The number of transfer bytes is bigger than the bytes in the file!");
+			}
+			
 		}
 		catch(IOException e)
 		{
@@ -48,8 +57,14 @@ public class TransferObject {
 			try 
 			{
 				out.flush();
-				in.close();
-				out.close();
+				if (in != null)
+				{
+					in.close();
+				}
+				if (out != null)
+				{
+					out.close();
+				}
 			} 
 			catch (IOException e) 
 			{
