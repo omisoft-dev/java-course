@@ -1,5 +1,9 @@
 package com.omisoft.basic_java.DesignPatterns.task2;
-
+/**
+ * Creating a Singleton class
+ * @author bkoprinski
+ *
+ */
 public class Singleton {
 	private static Singleton instance = new Singleton();
 	

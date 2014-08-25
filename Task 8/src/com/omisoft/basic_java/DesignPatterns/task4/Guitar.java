@@ -17,7 +17,7 @@ public class Guitar {
      * @param postModel
      * @param price
      */
-    Guitar(String model, String postModel, float price)
+    public Guitar(String model, String postModel, float price)
     {
 	this.setModel(model);
 	this.setPostModel(postModel);
