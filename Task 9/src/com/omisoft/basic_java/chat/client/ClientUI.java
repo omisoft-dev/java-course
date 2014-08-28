@@ -6,6 +6,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -19,12 +21,13 @@ import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
 
 
+
 /**
  * Creating Graphic design for our client
  * @author bkoprinski
  *
  */
-public class ClientUI implements ActionListener{
+public class ClientUI implements ActionListener , KeyListener{
     private JFrame frame;
     private JTextArea message;
     private JTextArea textField;
@@ -62,13 +65,16 @@ public class ClientUI implements ActionListener{
 	textField = new JTextArea("");
 	message = new JTextArea("");
 	listModel = new DefaultListModel<Object>();
+	
 	onlineUsers = new JList<Object>(listModel);// online users list
+	
+	
 	discon = new JFrame("");
 	errConnection = new JFrame("");
 	alreadyConnected = new JFrame("");
 	
 	onlineUsers.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-	onlineUsers.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+	onlineUsers.setLayoutOrientation(JList.VERTICAL_WRAP);
 	onlineUsers.setVisibleRowCount(-1);
 	listScroller = new JScrollPane(onlineUsers);
 	messagesByUsers = new JScrollPane(textField);
@@ -155,20 +161,21 @@ public class ClientUI implements ActionListener{
 		148 + size.width, 19 + size.height);
 	
 	
-		panel.validate();
-		panel.repaint();
+	panel.validate();
+	panel.repaint();
 	
-		frame.add(panel);
+	frame.add(panel);
 	
-		frame.validate();
-		frame.repaint();
+	frame.validate();
+	frame.repaint();
 		
 		
-		send.addActionListener(this);
-		connect.addActionListener(this);
-		disconnect.addActionListener(this);
+	send.addActionListener(this);
+	connect.addActionListener(this);
+	disconnect.addActionListener(this);
+	message.addKeyListener(this);	
+	
 		
-
     }
     
   
@@ -225,7 +232,7 @@ public class ClientUI implements ActionListener{
 	signIn.addActionListener(this);
 	
     }
-    
+
     /**
      * Creating action events to all the buttons in the client application
      */
@@ -267,7 +274,6 @@ public class ClientUI implements ActionListener{
 	if(source == signIn)
 	{
 	    obj.connectClient();
-	    listModel.addElement(textFieldLogg.getText());
 	    textFieldLogg.setText("");
 	    
 	    frame2.dispose();
@@ -298,6 +304,35 @@ public class ClientUI implements ActionListener{
 	}
 	
 
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) 
+    {
+	int key = e.getKeyCode();
+	
+	if (key == KeyEvent.VK_ENTER)
+	{
+	    send.doClick();
+	}
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) 
+    {
+	int key = e.getKeyCode();
+	
+	if (key == KeyEvent.VK_ENTER)
+	{
+	    message.setText("");
+	}	
     }
 
 

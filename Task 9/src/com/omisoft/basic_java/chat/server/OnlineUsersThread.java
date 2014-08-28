@@ -21,7 +21,8 @@ public class OnlineUsersThread extends Thread {
     private SimpleDateFormat sdf;
     private String newDateString;
     private JTextArea textField;
-    
+
+
     /**
      * Constructor
      * @param textField

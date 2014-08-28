@@ -49,6 +49,22 @@ public class ClientExecuteThread implements Runnable{
 		if (!a.equals(Client.KEEP_ALIVE_MESSAGE))
 		{
 		    textPrint.append("\n" + a);
+		    String b;
+		    if(a.contains("<") && a.contains(">") && a.contains("Chat."))
+		    {
+			
+			int c = a.indexOf(">");
+			b = a.substring(1, c);
+			ClientUI.listModel.addElement(b);
+		    }
+		    if(a.contains("<") && a.contains(">") && a.contains("offline."))
+		    {
+			
+			int c = a.indexOf(">");
+			b = a.substring(1, c);
+			ClientUI.listModel.removeElement(b);
+		    }
+		    
 		}
 	    } 
 	    catch (IOException e)

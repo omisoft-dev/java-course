@@ -16,7 +16,21 @@ class SendMessageThread extends Thread {
     private OnlineUsersThread mServerDispatcher;
     private ClientInformationInServer mClient;
     private PrintWriter mOut;
-    
+    public static boolean flag = true;
+    /**
+     * @return the flag
+     */
+    public static boolean isFlag() {
+        return flag;
+    }
+
+    /**
+     * @param flag the flag to set
+     */
+    public static void setFlag(boolean flag) {
+        SendMessageThread.flag = flag;
+    }
+
     /**
      * Constructor
      * @param aClient
@@ -76,7 +90,7 @@ class SendMessageThread extends Thread {
     public void run() {
 	try 
 	{
-	    while (!isInterrupted())
+	    while (!isInterrupted() && flag)
 	    {
 		String message = getNextMessageFromQueue();
 		sendMessageToClient(message);

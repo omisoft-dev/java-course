@@ -24,6 +24,7 @@ public class Server {
     private JTextArea textField;
     private static JFrame errConnection = new JFrame("");
     
+
     /**
      * Constructor
      * @param textField

@@ -127,6 +127,7 @@ public class ServerUI implements ActionListener {
 	Thread thread1 = null;
 	if (source == startServer) 
 	{
+	    SendMessageThread.setFlag(true);
 	    thread1 = new Thread(new ServerMainThread(textField));
 	    thread1.start();
 	    textField.setText("");
@@ -134,8 +135,7 @@ public class ServerUI implements ActionListener {
 	}
 	if (source == stopServer) 
 	{
-//	    Thread thread1 = new Thread(new ServerMainThread(textField));
-//	    thread1.start();
+	    SendMessageThread.setFlag(false);
 	    textField.setText("");
 	    textField.append("Server is stopped ...");
 	    
