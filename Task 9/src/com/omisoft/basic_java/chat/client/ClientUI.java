@@ -300,16 +300,15 @@ public class ClientUI implements ActionListener , KeyListener{
 		// Exception for the JList out of bounds
 	    }
 	    
-	    
 	}
-	
-
 
     }
 
+    /**
+     * Creating action events to the Enter button in the client application
+     */
     @Override
     public void keyTyped(KeyEvent e) {
-	// TODO Auto-generated method stub
 	
     }
 
