@@ -1,0 +1,38 @@
+select * from FirstDB.Books
+
+--select count(*) from FirstDB.Books
+
+/*
+insert into FirstDB.Books (Autor, Title, Publishing, City, DayOfYear, Price,Number)
+values ('McCullough, C.','Oracle 8 Bible','IDG Books 
+Worldwide, Inc','Foster City','1998-02-04',40,3)
+*/
+
+--delete from FirstDB.Books;
+
+--update FirstDB.Books set Price = 60 where City = 'California';
+
+--delete from FirstDB.Books where City = 'Foster City' and Publishing = 'ABC SQL';
+
+/*
+SELECT * FROM FirstDB.Books
+WHERE City LIKE 'c%';
+*/
+
+/*
+SELECT * FROM FirstDB.Books
+WHERE City LIKE '%o';
+*/
+
+/*
+ALTER TABLE FirstDB.Books
+DROP COLUMN Number
+*/
+
+/*
+ALTER TABLE FirstDB.Books
+ADD COLUMN Number INT
+*/
+
+
+--update FirstDB.Books set Number = 10 where City = 'New York';

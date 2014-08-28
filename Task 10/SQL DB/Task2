@@ -1,0 +1,63 @@
+/*
+insert into Task2.Trip (TicketNumber,DateOfArival,DateOfDeparture,City)
+values (1003,'2014-08-11','2014-08-12','Sofia')
+*/
+
+/*
+ALTER TABLE Task2.Trip
+ADD CONSTRAINT PK_TicketNumber
+PRIMARY KEY (TicketNumber)
+*/
+/*
+SELECT *
+FROM Task2.People p
+INNER JOIN Task2.Trip t ON p.ID = t.TicketNumber
+*/
+
+--select * from Task2.People_Trip
+
+
+--ALTER TABLE Task2.Trip ADD UNIQUE (TicketNumber)
+
+--ALTER TABLE Task2.People_Trip add FOREIGN KEY (KeyPeople) REFERENCES Task2.People(KeyPeople)
+
+
+--update Task2.People_Trip set City = 'Plovdiv' where ID = '8811115021';
+
+
+/*
+SELECT
+    People.Name,
+    People.Age,
+    People.Email,
+    People.ID,
+    Trip.TicketNumber,
+    Trip.DateOfArival,
+    Trip.DateOfDeparture,
+    Trip.City
+   -- Trip.KeyTrip,
+ --   People.KeyPeople
+FROM People
+JOIN People_Trip ON People.KeyPeople = People_Trip.KeyPeople
+JOIN Trip ON Trip.KeyTrip = People_Trip.KeyTrip
+Where City = 'sofia'
+*/
+
+
+/*
+SELECT
+    Trip.City,
+    count(Trip.City) AS "Number of people been in this city"
+FROM People
+JOIN People_Trip ON People.KeyPeople = People_Trip.KeyPeople
+JOIN Trip ON Trip.KeyTrip = People_Trip.KeyTrip
+GROUP BY city
+ORDER BY "Number of people been in this city";
+*/
+
+--DELETE FROM People_Trip;
+
+/*
+insert into People_Trip (KeyPeople,KeyTrip)
+values (6,6)
+*/
