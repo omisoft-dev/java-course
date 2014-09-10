@@ -1,7 +1,7 @@
 package com.omisoft.basic_java.chat.common;
 
 /**
- * Client constants.
+ * Client constants
  * @author bkoprinski
  *
  */
