@@ -13,17 +13,16 @@ import javax.servlet.http.HttpServletResponse;
  *
  */
 public class OnServletRegister extends HttpServlet {
-	private Validator valid = new Validator();
+	
+	private MailRegister reg;
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Overriding the get method
+	 * Constructor
 	 */
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException 
+	public OnServletRegister()
 	{
-		valid.register(req, resp);
+		reg = new MailRegister();
 	}
 
 	/**
@@ -33,7 +32,7 @@ public class OnServletRegister extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException 
 	{
-		valid.register(req, resp);
+		reg.register(req, resp);
 	}
 
 	

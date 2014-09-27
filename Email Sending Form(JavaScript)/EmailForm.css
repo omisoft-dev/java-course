@@ -24,6 +24,23 @@ width:263px;
 height:35px;
 }
 
+#eList
+{
+margin-left:28;
+width:747px;
+}
+
+#subject
+{
+width:745px;
+}
+
+#textBody
+{
+height:600px; 
+width:800px;
+}
+
 #reset
 {
 width:263px;

@@ -18,10 +18,27 @@ width:263px;
 height:35px;
 }
 
+#to
+{
+margin-left:28;
+width:747px;
+}
+
+#subject
+{
+width:745px;
+}
+
 #reset
 {
 width:263px;
 height:35px;
+}
+
+#textBody
+{
+height:600px;
+width:800px;
 }
 
 #map-canvas

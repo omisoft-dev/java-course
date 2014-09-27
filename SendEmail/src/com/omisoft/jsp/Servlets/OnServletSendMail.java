@@ -17,9 +17,17 @@ import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
  *
  */
 public class OnServletSendMail extends HttpServlet{
-	Validator valid = new Validator();
+
+	private MailSender sender;
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * Constructor
+	 */
+	public OnServletSendMail()
+	{
+		sender = new MailSender();
+	}
 
 	/**
 	 * Overriding the post method
@@ -83,7 +91,7 @@ public class OnServletSendMail extends HttpServlet{
 				e.printStackTrace();
 			}
 
-			valid.send(path2, filename1, to, subject, textBody);
+			sender.send(path2, filename1, to, subject, textBody);
 			resp.sendRedirect("MailSend.jsp");
 		}
 	}

@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.omisoft.jsp.DTO.GetTableInfoDTO;
-import com.omisoft.jsp.DTO.Query;
 
 /**
  * Creating a class for working with the SQL database
@@ -15,6 +14,12 @@ import com.omisoft.jsp.DTO.Query;
 public class AddToTableDAO extends BaseDAO implements TableDAO  {
 	private ResultSet rs;
 	private ArrayList<String> list;
+	
+	/**
+	 * Query with the sql operations kept in strings
+	 */
+	private static final String ADD_TO_TABLE_QUERY = "INSERT INTO SendEmail.SendInfo(FirstName, LastName, Email, Password, Age)";
+	private static final String CHECK_USER = "select Email, Password from SendEmail.SendInfo";
 	
 	/**
 	 * Constructor
@@ -40,7 +45,7 @@ public class AddToTableDAO extends BaseDAO implements TableDAO  {
 		try 
         {	
      
-			statement = connect.prepareStatement(Query.ADD_TO_TABLE_QUERY + 
+			statement = connect.prepareStatement(ADD_TO_TABLE_QUERY + 
 					"VALUES(?,?,?,?,?)");
 			
 			statement.setString(1,dto.getFirstName());
@@ -74,7 +79,7 @@ public class AddToTableDAO extends BaseDAO implements TableDAO  {
 
 		try 
 		{
-			statement = connect.prepareStatement(Query.CHECK_USER);
+			statement = connect.prepareStatement(CHECK_USER);
 			 
 			rs = statement.executeQuery();
 			 
@@ -129,7 +134,7 @@ public class AddToTableDAO extends BaseDAO implements TableDAO  {
 		
 		try 
 		{
-			statement = connect.prepareStatement(Query.CHECK_USER);
+			statement = connect.prepareStatement(CHECK_USER);
 			 
 			rs = statement.executeQuery();
 			 

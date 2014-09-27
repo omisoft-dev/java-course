@@ -15,16 +15,6 @@ public class OnServletLogin extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	private Validator valid = new Validator();
-	
-	/**
-	 * Overriding the get method
-	 */
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException
-	{
-		valid.validate(req, resp);
-	}
 
 	/**
 	 * Overriding the post method
