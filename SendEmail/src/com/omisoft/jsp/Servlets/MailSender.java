@@ -53,7 +53,7 @@ public class MailSender {
 				{
 					protected PasswordAuthentication getPasswordAuthentication()
 					{
-						return new PasswordAuthentication("b.koprinski@omisoft.eu","9211105326");
+						return new PasswordAuthentication("b.koprinski@omisoft.eu","aaaa");
 					}
 				}		
 		);
